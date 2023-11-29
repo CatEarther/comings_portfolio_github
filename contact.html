@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mike</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <script src="exjava.js"></script>
+</head>
+<body>
+    <header>
+        <div class="toggle_btn" onclick="myFunction()"> 
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav">
+            <ul class="nav_bar">
+                <li><div class="logo">M. COMINGS</div></li>
+                <li><a href="index.html">Home</a> </li>
+                <li><a href="about/about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+	<!--Add more information to enter in contact-->
+	<!--One table for social media / include links on the tables-->
+	
+    <main>
+        <div></div>
+        <div id="about_grid">
+            <div id="about_form">
+                <h1>Let's Get In Touch!</h1>
+                <form>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="First name">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Surname">
+
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="email" placeholder="youremail@domain.com">
+
+                    <label for="sub">Subject</label>
+                    <input type="text" id="sub" name="subject" placeholder="Ssubject topic ">
+
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" style="height:200px" placeholder="Type in your request here.."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!--Temporary disclaimer while work is still in progress-->
+        <div id="footer">
+            <p><small>This is a ficticious website created for learning purposes only. All copyright &copy; 2023, Mike Comings.</small></p>
+        </div>
+
+        <script type="text/javascript">
+
+            function myFunction(){
+                var navbar = document.getElementById('nav');
+                navbar.classList.toggle('show')
+            }
+            
+        </script>
+</body>
+</html>
+
+<!--
+
+   |\---/|
+   | ,_, |
+    \_`_/-..----.
+ ___/ `   ' ,""+ \  
+(__...'   __\    |`.___.';
+  (_,...'(_,.`__)/'.....+
+
+--> 

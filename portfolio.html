@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikes Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <script src="exjava.js"></script>
+</head>
+<body>
+    <div id="page_container">
+        <header>
+                <div class="toggle_btn" onclick="myFunction()"> 
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+                <nav id="nav">
+                    <ul class="nav_bar">
+                        <li><div class="logo">M. COMINGS</div></li>
+                        <li><a href="index.html">Home</a> </li>
+                        <li><a href="about/about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a class="active" href="portfolio.html">Portfolio</a></li> 
+                    </ul>
+                </nav>
+            <h1>Portfolio Gallery</h1>
+        </header>
+        <!--A gallery of my Portfolio-->
+        <!--Ultimately I want this page to be interactive.-->
+        <main>
+            <div id="port_btn">
+                <button class="btn active" onclick="filterSelection('all')">Show All</button>
+                <button class="btn" onclick="filterSelection('procreate')">Procreate</button>
+                <button class="btn" onclick="filterSelection('photoshop')">Photoshop</button>
+                <button class="btn" onclick="filterSelection('illustrator')">Illustrator</button>
+                <button class="btn" onclick="filterSelection('photography')">Photography</button>
+                <button class="btn" onclick="filterSelection('astrophotography')">AstroPhotography</button>
+            </div>
+            <div id="portfolio_container">
+                <div class="portfolio_body procreate"> <!-- separated for the filtering process -->
+                    <div class="port_info"> 
+                        <h2>Cat Earth Sandbox</h2>
+                        <img src="photos/portfolio/illustration2.PNG" alt="Sketches and brainstroming of Cat Earth character" width="300" id="sandbox"><br>
+                        <p>Sketches and drawings of my character "Cat Earth" illustrated entirely in Procreate.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio_body procreate">
+                    <div class="port_info">
+                        <h2>Cat Earth Sticker</h2>
+                        <img src="photos/portfolio/catearth_sticker.png" alt="Drawing of my Cat Earth character in form of a sticker" width="300">
+                        <p>A drawing of my Cat Earth Character whith a white border around it resembling a sticker format.</p>
+                    </div>
+                </div>
+                <div class="portfolio_body procreate">
+                    <div class="port_info">
+                        <h2>Character Mix</h2>
+                        <img src="photos/portfolio/garfnic.png" alt="Drawing Mesh of Sonic the Hedgehod mixed with Garfield" width="300">
+                        <p>A drawing two popular cartoon characters "Sonic" and "Garfield" meshed together.</p>
+                    </div>
+                </div>
+                <div class="portfolio_body photoshop">
+                    <div class="port_info">
+                        <h2>Trash Photoshop</h2>
+                        <img src="photos/portfolio/photoshop.jpg" alt="Cool looking trash can with triangle lazer around it" width="300" id="trash">
+                        <p>Client asked to freestyle edit a photograph taken outdoors, one of the photographs happened to be of this immaculate trashcan.</p>
+                    </div>
+                </div>
+                <div class="portfolio_body illustrator">    
+                    <div class="port_info">
+                        <h2>BallKicker Camp Logo</h2>
+                        <img src="photos/portfolio/ballkicker_logo.png" alt="Ballkicker crest logo" width="300"> 
+                        <p>Various logo designs created solely with the tools provided in Adobe Illustrator.</p>
+                    </div>
+                </div>
+                <div class="portfolio_body photography">
+                    <div class="port_info">
+                        <h2>Spooky Lamp</h2>
+                        <img src="photos/portfolio/photography1.JPG" alt="Suspicion lamp man standing in dark hallway" width="300"> 
+                        <p>Various photographs taken with a wide range of styles and focuses, all photos taken with a Nikon p900 camera.</p>
+                    </div>
+                </div>
+                <div class="portfolio_body astrophotography">
+                    <div class="port_info">
+                        <h2>Astrophotography</h2>
+                        <img src="photos/portfolio/astro1.jpg" alt="Blood at a distance alongside stars" width="300">
+                        <p>Various far and close-up pictures of the 2022 lunar eclipse taken through a catadiptric telescope.</p>
+                    </div>
+                </div>
+                <!-- 
+                <div class="portfolio_body *add*">
+                    <div class="port_info">
+                        <h2></h2>
+                        <img alt="" width="300">
+                        <p></p>
+                    </div>
+                </div> -->
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer">
+            <!--Not a real web disclaimer-->
+            <p><small>This is a ficticious website created for learning purposes only. All copyright &copy; 2023, Mike Comings. pls dont sue</small></p>
+            </div>
+        </footer>
+    
+    </div>
+
+    <script>
+    filterSelection("all");
+
+    function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("portfolio_body");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+    }
+
+    function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+        }
+    }
+    }
+
+    function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+    }
+
+    var btnContainer = document.getElementById("port_btn");
+var btns = btnContainer.getElementsByClassName("btn");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+
+    // this one  removes the "active" class from all buttons
+    for (var j = 0; j < current.length; j++) {
+      current[j].className = current[j].className.replace(" active", "");
+    }
+
+    // this one adds the "active" class to the clicked button
+    this.className += " active";
+  });
+}
+    </script>
+</body>
+<!-- 
+              /| _ ╱|、  
+             (•̀ㅅ •́)
+           ＿ノ ヽ ノ＼＿ 
+         /　` / ⌒Ｙ⌒  Ｙ　 \
+        ( 　(三ヽ人　 /　 　|
+         |　ﾉ⌒＼ ￣￣ヽ　 ノ
+          ヽ＿＿＿＞､＿＿／
+            ｜( 王 ﾉ〈 
+             /ﾐ`ー―彡\ 
+           |╰        ╯|   
+           |    /\    |
+           |   /  \   |                    
+           | /     \  |                  
+ -->
+</html>

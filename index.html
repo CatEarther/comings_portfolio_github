@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Comings Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+  
+</head>
+<body>
+    <div id="page_container">
+        <header>
+                <!-- This creates the hamburger icon -->
+            <div class="toggle_btn" onclick="myFunction()"> 
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="nav">
+                <ul class="nav_bar">
+                    <li><div class="logo">M. COMINGS</div></li>
+                    <li><a class="active" href="index.html">Home</a> </li>
+                    <li><a href="about/about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li> 
+                    <!--<li><a href="fun/arcade.html">Arcade</a></li> --> <!--personal fun page-->
+                </ul>
+            </nav>
+
+            <section id="hero">
+                <div class="section_hero-text">
+                    <p class="hero_txt 1">Oi! I'm</p>
+                    <h1 class="section_title-name">Michael Comings</h1>
+                    <p class="hero_txt 2">Digital Artist and Graphic Designer</p>
+                    <div class="hero_btn">
+                        <a class="btn" href="contact.html">Contact Me</a> 
+                        <a class="btn" href="portfolio.html">See Work</a>
+                    </div>
+                </div>
+                <div class="section_hero-image">
+                <img src="photos/me/photo_of_me_blue.jpg" alt="Image of Mike Comings pondering as if he was the thinker" width="500"><br>
+                </div>
+            </section>
+
+        </header>
+        
+        
+        <main>
+            <div id="index_container">
+                <div class="recent_work"><h2>Recent Work</h2></div>
+                <div class="rw_body one">
+                    <h3>Brazilian Icons</h3>
+                    <img src="photos/recent_work/mockups/landmass.jpg" alt="Brazilian flag icon" width="300">
+                    <p>Brazil related icons created requested by client for an infographic project baout travel to brazil.</p>
+                </div>
+                <div class="rw_body two">
+                    <h3>Soccer Camp Logo</h3>
+                    <img src="photos/recent_work/mockups/embroidery.png" alt="An embroidery of the designed camp logo" width="300">
+                    <p>Client asked to create a logo for a soccer camp and use the logo to create verious merchandise mockups.</p>
+                </div>
+                <div class="rw_body three">
+                    <h3>Lunar Eclipse</h3>
+                    <img src="photos/portfolio/astro1.jpg" alt="A zoomed out image of the moon being eclipsed by the Earth surrounded by stars" width="300">
+                    <p>Doing astrophotography as a hobby, I took the opportunity to take a photo of the most recent blood moon</p>
+                </div>
+            </div>    
+        </main>
+
+        
+        <!--Add some icons at the bottom and link them to social media, Makes it easy to Contact-->
+
+
+        <footer>
+            <!--Temporary disclaimer while work is still in progress-->
+            <div id="footer">
+                <p><small>This is a ficticious website created for learning purposes only. All copyright &copy; 2023, Mike Comings.</small></p>
+            </div>
+        </footer>
+    </div>
+<script type="text/javascript">
+
+    function myFunction(){
+        var navbar = document.getElementById('nav');
+        navbar.classList.toggle('show')
+    }
+    
+</script>
+
+</body>
+</html>
+
+<!--
+
+                              / )
+              (\__/)         ( (
+              )    (          ) )
+            ={      }=       / /
+              )     `-------/ /
+             (               /
+              \              |
+             ,'\       ,    ,'
+             `-'\  ,---\   | \
+                _) )    `. \ /
+               (__/       ) )   
+                         (_/
+
+-->

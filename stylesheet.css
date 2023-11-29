@@ -1,0 +1,418 @@
+@charset "UTF-8";
+
+/*---------------
+Colors
+• White = #f7f7f7
+• Dark = #323233 (apt to change)
+• Yellow = #ffdb43
+• Blue = #3dacdb
+---------------*/
+
+/* _______Fonts______ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/*---------------General style---------------*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+html{
+    scroll-behavior: smooth ;
+    box-sizing: border-box;
+}
+body{
+background-color: #f7f7f7;
+font-family: 'Poppins', sans-serif;
+}
+p{
+    color: #323;
+}
+table, th, td {
+    border:1px solid black;
+}
+body::-webkit-scrollbar {
+    width: .3rem;
+}
+body::-webkit-scrollbar-track {
+    background: #2e81a4;
+}
+body::-webkit-scrollbar-thumb {
+    background: #ffdb43;
+}
+img{
+    max-width: 100%;
+}
+#page_container{
+    position: relative;
+    min-height: 100vh;
+}
+main{
+    padding-bottom: 4rem;
+}
+
+/*---------------Nav Style---------------*/
+.nav_bar{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none; /*no more bulletpoint yay*/
+    /* padding: .7em; */
+    height: 10vh; /* how much view height % of the screen the nav takes */
+    background-color: #323233;
+    
+}
+.nav_bar a{
+    color: white;
+    font-size: 1.3rem; /* rem = x times the browsers font size */
+    padding: 38px 40px; /* the size of the box around text*/
+    text-decoration: none; /*no more underline*/
+    font-weight: 400;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, text-decoration 0.3s;  
+}
+.nav_bar a.active{
+    color: #3dacdb;
+}
+.nav_bar a:hover{
+    background-color: #3dacdb;
+    color: #f7f7f7;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: #f7f7f7;
+    transform: translateY(-5px);
+}
+.logo{
+    float: left;
+    margin-right: auto;
+    margin-left: 50px;
+    color: #f7f7f7;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.logo:hover{
+cursor: default; 
+/* keeps the cursor from changing in the logo */
+}
+
+nav ul li{
+    display: inline-block;
+}
+/* HAMBURGER TIME */
+.toggle_btn{
+    width: 35px;
+    position: absolute;
+    right: 80px;
+    top: 50px;
+    display: none;
+    cursor: pointer;
+}
+.toggle_btn span{
+    width: 100%;
+    height: 2px;
+    background-color: #ffdb43;
+    float: left;
+    margin-bottom: 8px;
+
+}
+
+/* ____________HERO ELEMENTS___________ */
+#hero{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    padding: 0 10%;
+    justify-content: center;
+}
+.section_title-name{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.section_hero-image{
+float: right;
+padding: 10% 5%;
+}
+.hero_txt{
+    font-size: 1.55rem;
+}
+
+/*---------------DA BUTTON??---------------*/
+.btn{
+    background-color: transparent;
+    border: 2px solid;
+    color: #3dacdb;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block; /*displays in line and allows me to set width and height*/
+    font-size: 18px;
+    margin: 6px 3px;
+    padding: 20px 30px; /*sizes of boxes*/
+    cursor: pointer; /*cursor pointer style*/
+    transition: color .3s, background-color .3s, border-color .3s, transform .3s;
+    
+}
+.btn:hover{
+    color: #fff;
+    background-color: #3dacdb;
+    border-color: #3dacdb;
+    transform: translateY(-5px)
+}
+.btn.active{
+    color: #fff;
+    background-color: #3dacdb;
+    border-color: #3dacdb;
+}
+
+/*---------------ABOUT FORM---------------*/
+input, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2e81a4;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+/* button style */
+button[type=submit]{
+    background-color: transparent;
+    border: 2px solid;
+    color: #3dacdb;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 6px 3px;
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: color .3s, background-color .3s, border-color .3s, transform .3s;
+}
+button[type=submit]:hover{
+    color: #fff;
+    background-color: #3dacdb;
+    border-color: #3dacdb;
+    transform: translateY(-5px)
+}
+button[type=submit]:hover{
+    color: #fff;
+    background-color: #3dacdb;
+    border-color: #3dacdb;
+}
+
+#about_form{
+    border-radius: 5px;
+    /* background-color: #323; */
+    padding: 100px;
+}
+
+/*-------------------------Grid Time-------------------------*/
+
+/* ---------Index Style---------- */
+
+/* Index Grid */   
+
+#index_container{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(310px,1fr));
+    grid-template-rows: auto;
+    grid-template-areas: 
+    're_wo  re_wo   re_wo'
+    ;
+    justify-items: center; 
+    grid-gap: 15px;
+}
+.recent_work{
+    grid-area: re_wo;
+    object-fit: cover;
+}
+
+.rw_body{
+    text-align: center;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 4px 0 #3dacdb, 0 6px  10px 0 #3dacdb;
+}
+.recent_work{
+    font-size: 2rem;
+}
+.rw_body h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.9rem;
+}
+.rw_body p{
+    padding: 20px 30px;
+}
+/* About Grid */
+
+.about_img {
+    float: left;
+    margin: 2em 3em;
+}
+
+.about_text {
+    padding: 2em 3em 2em 0;
+}
+
+/* -----Portfolio Style------ */
+
+/* Grid */
+#portfolio_container{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(310px,1fr)) ;
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    padding-bottom: 15px;
+}
+
+/* content style */
+.portfolio_body{
+    text-align: center;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 4px 0 #3dacdb, 0 6px  10px 0 #3dacdb;
+     /* add opcaity to shadow */
+    display: none; /*AUTOMATICALLY SHOWS NO CONTENT*/
+}
+.show{
+    display: block; /* SHOWS THE CONTENT THAT HAS THIS CLASS */
+}
+.portfolio_body h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* .portfolio_body img{
+transition: ;
+}
+.portfolio_body img:hover{
+    transform: ;
+    } */
+.portfolio_body p{
+    padding: 20px 30px;
+}
+#trash:hover {
+    content: url(photos/portfolio/photoshop_before.jpg); /* chamges the image on hover*/
+    width: 300px;
+}
+#sandbox:hover {
+    content: url(photos/portfolio/drawing_timelapse.gif);  
+    width: 300px;
+}
+
+#portfolio_container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+/*----------FOOTER----------*/
+
+#footer{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left:2%;
+    height: 2.5rem;
+    /* background-color: #ffdb43; */
+
+}
+
+/*-------------------------MEDIA QUERIE-------------------------*/
+
+@media screen and (max-width: 1010px){
+    #hero{
+        flex-wrap:wrap;
+        flex-direction:column-reverse;
+        align-items:center;
+        margin-bottom: 7rem;
+    }
+    .section_hero-text{
+        text-align: center;
+    }
+    .hero_btn{
+
+        padding: 0 10%;
+    }
+
+    #index_container{
+        grid-template-columns: repeat(2,minmax(310px,1fr));
+        grid-template-areas: 
+        're_wo  re_wo'
+        'rw_icon rw_logo'
+        'rw_center rw_center'
+        ;
+        justify-items: center; 
+        grid-gap: 15px;
+    }
+    .rw_body.one{
+        grid-area: rw_icon;
+        object-fit:cover;
+
+    } .rw_body.two{
+        grid-area: rw_logo;
+        object-fit:cover;
+    }
+    .rw_body.three{
+        grid-area: rw_center;
+        object-fit:cover;
+        margin: 0 25%;
+    }
+    
+
+}
+@media screen and (max-width: 868px){
+    .toggle_btn{
+        display: block;
+        transition: margin-top .3s,  marginbottom .3s;
+    }
+    .nav_bar{
+        display: block;
+        width: 100%;
+    }
+    nav ul li{
+        width: 100%;
+        justify-content: center;
+
+    }
+    nav li .logo{
+        margin-top: 35px;
+    }
+    .nav_bar a{
+        display: none;
+    }
+    nav.show a{
+        display: block;
+        background-color: #323233;
+        
+    }
+    nav.show ul{
+        margin-bottom: 40vh;
+    }
+}
+@media screen and (max-width: 665px){
+    #index_container{
+        grid-template-columns: minmax(310px,1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        're_wo'
+        'rw_icon'
+        'rw_logo'
+        'rw_center'
+        ;
+        justify-items: center; 
+        grid-gap: 15px;
+    }
+
+    .rw_body.three{
+        margin: 0 10%;
+   }
+    .rw_body{
+         margin: 0 10%;
+    }
+}
+@media screen and (max-width: 634px){
+
+    .portfolio_body{
+         margin: 0 10%;
+    }
+}
